@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Alert } from 'react-native';
 import { Button } from 'react-native-elements';
+// @ts-ignore
 import { Picker } from 'react-native-picker-dropdown';
 
-export default class SearchScreen extends React.Component {
-  constructor(props, context) {
+interface State {
+  language: string
+}
+
+export default class SearchScreen extends React.Component<{}, State> {
+  constructor(props: {}, context?: any) {
     super(props, context);
     this.state = { language: 'js' };
-    this.onValueChange = this.handleValueChange.bind(this);
-  }
-
-  handleValueChange(language) {
-    this.setState({ language });
   }
 
   static navigationOptions = {
@@ -26,7 +26,7 @@ export default class SearchScreen extends React.Component {
         <Picker
           style={styles.picker}
           selectedValue={this.state.language}
-          onValueChange={this.onValueChange}
+          onValueChange={(language: string) => this.setState({ language })}
           mode="dialog"
           textStyle={styles.pickerText}
         >
