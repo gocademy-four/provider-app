@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Alert, Text, View, StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
-import { createStackNavigator } from 'react-navigation';
 
 export default class MainMenuCard extends React.Component {
   render() {
@@ -15,15 +14,10 @@ export default class MainMenuCard extends React.Component {
         <Button
           onPress = {this.props.onPress}
           title={this.props.button}
-          fontWeight='bold'
+          titleStyle={styles.buttonText}
           color="#34495e"
           icon={{name: this.props.icon, color:"#34495e"}}
-          buttonStyle={{
-            borderWidth:1,
-            borderRadius:3,
-            borderColor:'#34495e',
-            backgroundColor:'transparent'
-          }}
+          buttonStyle={styles.button}
           containerViewStyle={{marginLeft:0}}
         />
       </View> 
@@ -58,4 +52,13 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
     color: '#34495e',
   },
+  button: {
+    borderWidth:1,
+    borderRadius:3,
+    borderColor:'#34495e',
+    backgroundColor:'transparent'
+  },
+  buttonText: {
+    color: "#34495e",
+  }
 });

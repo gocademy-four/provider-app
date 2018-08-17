@@ -38,12 +38,12 @@ export default class SearchScreen extends React.Component {
         <Button
           onPress={ () => Alert.alert('Do something!') }
           title="Cari Tutor"
-          icon={{name: 'search'}}
+          icon={{name: 'search', color: 'white'}}
           buttonStyle={{
             borderRadius:3,
             backgroundColor:'#34495e'
           }}
-          containerViewStyle={{
+          containerStyle={{
             alignSelf: 'stretch',
             marginTop: 12,
           }}
@@ -57,9 +57,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'top',
     padding: 20,
-    backgroundColor: '#91CB6F',
+    backgroundColor: '#ecf0f1',
   },
   title: {
     fontSize: 24,

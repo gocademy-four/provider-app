@@ -1,17 +1,18 @@
 import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import { List, ListItem } from 'react-native-elements';
+import { ListItem } from 'react-native-elements';
 
 const list = [
   {
-    name: 'Amy Farha',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President'
+    name: 'Appointments',
+    location: 'tangerang',
+    lesson: 'kimia',
+    date: "27 Januari 2008",
   },
   {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
+    name: 'Trips',
+    lesson: 'fisika',
+    date: "27 Januari 2008",
   },
 ]
 
@@ -21,30 +22,28 @@ export default class HomeScreen extends React.Component {
   };
   render() {
     return (
-      <View style={styles.container}>
-        <List containerStyle={{marginBottom: 20}}>
-          {
-            list.map((l) => (
-              <ListItem
-                roundAvatar
-                avatar={{uri:l.avatar_url}}
-                key={l.name}
-                title={l.name}
-              />
-            ))
-          }
-        </List>
-      </View>
+<View style={styles.container}>
+  {
+    list.map((item, i) => (
+      <ListItem
+        key={i}
+        title={item.name}
+        titleStyle={styles.title}
+        subtitle={"Pelajaran: " + item.lesson + "\n" + item.date}
+        leftIcon={{ name: 'school' }}
+      />
+    ))
+  }
+</View>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: '#ecf0f1',
   },
-});
+  title: {
 
+  }
+});
