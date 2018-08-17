@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, AsyncStorage } from 'react-native';
 import { Input, Button } from 'react-native-elements';
 import { NavigationScreenProp } from 'react-navigation';
 
@@ -40,10 +40,13 @@ export default class RegisterScreen extends React.Component<Props, State> {
       }
     )
 
-    if (response.status != 200) {
-      console.warn("Unable to register");
+    if (response.status === 200) {
+      const { token } = JSON.parse(await response.text());
+
+      await AsyncStorage.setItem('token', token);
+      this.props.navigation.navigate('Initial');
     } else {
-      console.warn("REGISTERED!");
+      console.warn("Unable to register");
     }
   }
 
