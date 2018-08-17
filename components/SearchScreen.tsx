@@ -36,7 +36,7 @@ export default class SearchScreen extends React.Component<{}, State> {
           <Picker.Item label="Elm" value="elm" />
         </Picker>
         <Button
-          onPress={ () => Alert.alert('Do something!') }
+          onPress={ () => this.props.navigation.navigate('SearchResult') }
           title="Cari Tutor"
           icon={{name: 'search', color: 'white'}}
           buttonStyle={{

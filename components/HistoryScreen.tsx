@@ -44,6 +44,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#ecf0f1',
   },
   title: {
-
+    fontWeight: 'bold',
   }
 });
