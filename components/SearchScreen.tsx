@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Alert } from 'react-native';
+import { Text, View, StyleSheet, Alert, Platform } from 'react-native';
 import { Button } from 'react-native-elements';
 // @ts-ignore
 import { Picker } from 'react-native-picker-dropdown';
@@ -84,5 +84,6 @@ const styles = StyleSheet.create({
   pickerText: {
     padding: 10,
     color: "#34495e",
+    ...(Platform.OS === 'ios' ? { fontSize: 14 } : {})
   }
 });
