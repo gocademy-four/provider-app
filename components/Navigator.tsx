@@ -2,6 +2,8 @@ import { StyleSheet } from 'react-native';
 import { createSwitchNavigator, createStackNavigator } from 'react-navigation';
 import LoginScreen from './LoginScreen';
 import RegisterScreen from './RegisterScreen';
+import InitialScreen from './InitialScreen';
+import HomeScreen from './HomeScreen';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,15 +13,17 @@ const styles = StyleSheet.create({
   },
 });
 
-// const AppStack = createStackNavigator({ Home: HomeScreen, Other: OtherScreen });
+const AppStack = createStackNavigator({
+  Home: HomeScreen
+});
 
 const AuthStack = createStackNavigator({
   Login: LoginScreen,
-  Register: RegisterScreen
+  Register: RegisterScreen,
 });
 
 export default createSwitchNavigator({
-  // Loading: LoadingScreen,
-  // App: AppStack,
+  Initial: InitialScreen,
+  App: AppStack,
   Auth: AuthStack,
 });
