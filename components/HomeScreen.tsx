@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, View, AsyncStorage, Button } from 'react-native';
+import { StyleSheet, View, AsyncStorage, Button, Alert } from 'react-native';
 import { NavigationScreenProp } from 'react-navigation';
 import MainMenuCard from './MainMenuCard';
 
@@ -13,11 +13,19 @@ export default class HomeScreen extends React.Component<Props> {
       headerTitle: 'Home',
       headerRight: (
         <Button
-          onPress={async () => {
-            await AsyncStorage.removeItem('token');
-            navigation.navigate('Initial');
-          }}
-          title="Logout"
+          onPress={() => Alert.alert(
+            "Log out",
+            "Anda yakin mau keluar dari aplikasi?",
+            [
+              {text: 'Tidak', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+              {text: 'Ya', onPress: async () => {
+                await AsyncStorage.removeItem('token');
+                navigation.navigate('Initial');
+              }}
+            ],
+            { cancelable: false }
+          )}
+          title="Log out"
         />
       ),
     });
