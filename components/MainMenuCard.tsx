@@ -3,7 +3,16 @@ import { Alert, Text, View, StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation';
 
-export default class MainMenuCard extends React.Component {
+interface Props {
+  color: string
+  name: string
+  subtitle: string
+  button: string
+  icon: string
+  onPress: () => void
+}
+
+export default class MainMenuCard extends React.Component<Props> {
   render() {
     return(
       <View
@@ -13,20 +22,19 @@ export default class MainMenuCard extends React.Component {
         <Text style={styles.cardName}>{ this.props.name }</Text>
         <Text style={styles.cardSubtitle}>{ this.props.subtitle }</Text>
         <Button
-          onPress = {this.props.onPress}
+          onPress={this.props.onPress}
+
           title={this.props.button}
-          fontWeight='bold'
-          color="#34495e"
-          icon={{name: this.props.icon, color:"#34495e"}}
-          buttonStyle={{
-            borderWidth:1,
-            borderRadius:3,
-            borderColor:'#34495e',
-            backgroundColor:'transparent'
+          icon={{
+            name: this.props.icon,
+            color:"#34495e"
           }}
-          containerViewStyle={{marginLeft:0}}
+
+          buttonStyle={styles.cardButton}
+          titleStyle={styles.cardButtonTitle}
+          containerStyle={styles.cardButtonContainer}
         />
-      </View> 
+      </View>
     );
   }
 }
@@ -57,5 +65,18 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'justify',
     color: '#34495e',
+  },
+  cardButton: {
+    borderWidth: 1,
+    borderRadius: 3,
+    borderColor: '#34495e',
+    backgroundColor: 'transparent'
+  },
+  cardButtonContainer: {
+    marginLeft: 0
+  },
+  cardButtonTitle: {
+    fontWeight: 'bold',
+    color: '#34495e'
   },
 });
