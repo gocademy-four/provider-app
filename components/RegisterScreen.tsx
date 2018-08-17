@@ -18,6 +18,10 @@ interface State {
 }
 
 export default class RegisterScreen extends React.Component<Props, State> {
+  static navigationOptions = {
+    title: 'Daftar',
+  };
+
   private registerPressed = async () => {
     const response = await fetch(
       "https://gocademy-tutor-api-server.herokuapp.com/customers", {
@@ -57,37 +61,55 @@ export default class RegisterScreen extends React.Component<Props, State> {
   render() {
     return (
       <View style={styles.container}>
+        <Text style={{marginBottom:14}}>Belajar apa saja, hanya dengan sentuhan jari</Text>
         <Input
+          containerStyle={styles.input}
+          leftIcon={{name: 'email'}}
           placeholder="Type your e-mail here"
           onChangeText={(email) => this.setState({...this.state, email})} />
         <Input
+          containerStyle={styles.input}
+          leftIcon={{name: 'person'}}
           placeholder="Type your name here"
           onChangeText={(name) => this.setState({...this.state, name})} />
         <Input
+          containerStyle={styles.input}
+          leftIcon={{name: 'lock'}}
           placeholder="Type your password here"
           onChangeText={
             (password) => this.setState({...this.state, password})} />
         <Input
+          containerStyle={styles.input}
+          leftIcon={{name: 'phone'}}
           placeholder="Type your phone number here"
           onChangeText={
             (phoneNumber) => this.setState({...this.state, phoneNumber})} />
         <Input
+          containerStyle={styles.input}
+          leftIcon={{name: 'wc'}}
           placeholder="Type your gender here"
           onChangeText={
             (gender) => this.setState({...this.state, gender})} />
         <Input
+          containerStyle={styles.input}
+          leftIcon={{name: 'home'}}
           placeholder="Type your street here"
           onChangeText={
             (street) => this.setState({...this.state, street})} />
-          <Input
+        <Input
+        containerStyle={styles.input}
+          leftIcon={{name: 'domain'}}
         placeholder="Type your city here"
-          onChangeText={
-            (city) => this.setState({...this.state, city})} />
+        onChangeText={
+          (city) => this.setState({...this.state, city})} />
+        <Button large title="Daftar" onPress={this.RegisterPressed} />
 
-        <View style={styles.buttonContainer}>
-          <Button title="Login" onPress={this.loginPressed} />
-          <Button title="Register" onPress={this.registerPressed} />
-        </View>
+        <Text style={{marginTop:20}}>Sudah punya akun?</Text>
+        <Text style={{color: 'blue'}}
+          onPress={this.loginPressed}
+        >
+          Masuk sekarang
+        </Text>
       </View>
     );
   }
@@ -99,6 +121,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  input: {
+    marginBottom: 12,
   },
   buttonContainer: {
     flexDirection: 'row',

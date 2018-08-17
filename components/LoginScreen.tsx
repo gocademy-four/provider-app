@@ -13,6 +13,10 @@ interface State {
 }
 
 export default class LoginScreen extends React.Component<Props, State> {
+  static navigationOptions = {
+    title: 'Login',
+  };
+
   private registerPressed = () => {
     this.props.navigation.navigate('Register')
   }
@@ -45,18 +49,26 @@ export default class LoginScreen extends React.Component<Props, State> {
   render() {
     return (
       <View style={styles.container}>
+        <Text style={styles.title}>GO - TUTOR</Text>
         <Input
-          placeholder="Type your e-mail here"
+          leftIcon={{name: 'email'}}
+          containerStyle={styles.input}
+          placeholder="Email"
           onChangeText={(email) => this.setState({...this.state, email})} />
         <Input
-          placeholder="Type your password here"
+          leftIcon={{name: 'lock'}}
+          containerStyle={styles.input}
+          placeholder="Password"
           onChangeText={
             (password) => this.setState({...this.state, password})} />
+        <Button large title="Masuk" onPress={this.loginPressed} />
 
-        <View style={styles.buttonContainer}>
-          <Button title="Register" onPress={this.registerPressed} />
-          <Button title="Login" onPress={this.loginPressed} />
-        </View>
+        <Text style={{marginTop:20}}>Belum punya akun?</Text>
+        <Text style={{color: 'blue'}}
+          onPress={this.registerPressed}
+        >
+          Daftar sekarang
+        </Text>
       </View>
     );
   }
@@ -71,5 +83,12 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: 'row',
-  }
+  },
+  title: {
+    marginBottom: 16,
+    fontSize: 24,
+  },
+  input: {
+    marginBottom: 12,
+  },
 });

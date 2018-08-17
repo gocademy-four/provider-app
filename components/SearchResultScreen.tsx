@@ -36,8 +36,8 @@ export default class SearchResultScreen extends React.Component {
               "Pilih tutor ini?",
               "Tekan 'Tidak' untuk membatalkan pesanan",
               [
-                {text: 'Tidak', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-                {text: 'Ya', onPress: () => this.props.navigation.navigate('Home')},
+                {text: 'Tidak', onPress: () => console.log('No Pressed'), style: 'cancel'},
+                {text: 'Ya', onPress: () => this.props.navigation.navigate('Home')}
               ],
               { cancelable: false }
             )}
