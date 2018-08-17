@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, View, AsyncStorage } from 'react-native';
-import { Text, Button } from 'react-native-elements';
+import { StyleSheet, View, AsyncStorage, Button } from 'react-native';
 import { NavigationScreenProp } from 'react-navigation';
 import MainMenuCard from './MainMenuCard';
 
