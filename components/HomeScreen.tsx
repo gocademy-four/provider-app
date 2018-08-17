@@ -11,7 +11,7 @@ export default class HomeScreen extends React.Component<Props> {
   static navigationOptions =
     ({ navigation }: { navigation: NavigationScreenProp<any> }) => ({
       headerTitle: 'Home',
-      headerLeft: (
+      headerRight: (
         <Button
           onPress={async () => {
             await AsyncStorage.removeItem('token');
@@ -30,7 +30,7 @@ export default class HomeScreen extends React.Component<Props> {
           subtitle="Sudah siap belajar bersama GO-TUTOR? Ayo cari gurunya!"
           button="Mulai cari tutor"
           onPress={() => this.props.navigation.navigate('Search')}
-          color='#91CB6F'
+          color='white'
           icon='search'
         />
         <MainMenuCard
@@ -38,7 +38,7 @@ export default class HomeScreen extends React.Component<Props> {
           subtitle="Masih lupa besok belajar dengan siapa? Yuk, lihat catatannya!"
           button="Buka log pesanan"
           onPress={() => this.props.navigation.navigate('History')}
-          color='#88AA77'
+          color='#ecf0f1'
           icon='history'
         />
       </View>

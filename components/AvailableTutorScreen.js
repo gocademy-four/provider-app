@@ -11,12 +11,13 @@ const list = [
   },
   {
     name: 'Trips',
+    location: 'tangerang',
     lesson: 'fisika',
     date: "27 Januari 2008",
   },
 ]
 
-export default class HistoryScreen extends React.Component {
+export default class AvailableTutorScreen extends React.Component {
   static navigationOptions = {
     title: 'History',
   };
