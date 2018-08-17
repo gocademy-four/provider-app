@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, View, AsyncStorage } from 'react-native';
-import { Text, Button } from 'react-native-elements';
+import { StyleSheet, View, AsyncStorage, Button } from 'react-native';
 import { NavigationScreenProp } from 'react-navigation';
 
 interface Props {
@@ -15,7 +14,7 @@ export default class HomeScreen extends React.Component<Props> {
 
   static navigationOptions = {
     headerTitle: 'Home',
-    headerLeft: (
+    headerRight: (
       <Button
         onPress={this.logoutPressed}
         title="Logout"
@@ -42,9 +41,6 @@ export default class HomeScreen extends React.Component<Props> {
           color='#88AA77'
           icon='history'
         />
-        <Button
-          title="Logout"
-          onPress={this.logoutPressed} />
       </View>
     );
   }

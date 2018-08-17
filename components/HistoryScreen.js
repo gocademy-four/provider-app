@@ -31,7 +31,7 @@ export default class HomeScreen extends React.Component {
                 key={l.name}
                 title={l.name}
               />
-            )
+            ))
           }
         </List>
       </View>
