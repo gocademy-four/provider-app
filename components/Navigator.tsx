@@ -5,6 +5,7 @@ import RegisterScreen from './RegisterScreen';
 import InitialScreen from './InitialScreen';
 import HomeScreen from './HomeScreen';
 import HistoryScreen from './HistoryScreen';
+import SearchScreen from './SearchScreen';
 
 const styles = StyleSheet.create({
   container: {
@@ -22,6 +23,7 @@ const AppStack = createStackNavigator({
 const AuthStack = createStackNavigator({
   Login: LoginScreen,
   Register: RegisterScreen,
+  Search: SearchScreen,
 });
 
 export default createSwitchNavigator({
