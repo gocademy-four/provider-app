@@ -4,6 +4,8 @@ import LoginScreen from './LoginScreen';
 import RegisterScreen from './RegisterScreen';
 import InitialScreen from './InitialScreen';
 import HomeScreen from './HomeScreen';
+import HistoryScreen from './HistoryScreen';
+import SearchScreen from './SearchScreen';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,7 +16,9 @@ const styles = StyleSheet.create({
 });
 
 const AppStack = createStackNavigator({
-  Home: HomeScreen
+  Home: HomeScreen,
+  Search: SearchScreen,
+  History: HistoryScreen
 });
 
 const AuthStack = createStackNavigator({

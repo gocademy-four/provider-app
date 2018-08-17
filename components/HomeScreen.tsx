@@ -13,12 +13,35 @@ export default class HomeScreen extends React.Component<Props> {
     this.props.navigation.navigate('Initial');
   }
 
+  static navigationOptions = {
+    headerTitle: 'Home',
+    headerLeft: (
+      <Button
+        onPress={this.logoutPressed}
+        title="Logout"
+      />
+    ),
+  };
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Ma token:</Text>
-        <Text>{this.props.navigation.getParam("token")}</Text>
-
+        <MainMenuCard
+          name="Cari Tutor"
+          subtitle="Sudah siap belajar bersama GO-TUTOR? Ayo cari gurunya!"
+          button="Mulai cari tutor"
+          onPress={() => this.props.navigation.navigate('Search')}
+          color='#91CB6F'
+          icon='search'
+        />
+        <MainMenuCard
+          name="Log Pesanan"
+          subtitle="Masih lupa besok belajar dengan siapa? Yuk, lihat catatannya!"
+          button="Buka log pesanan"
+          onPress={() => this.props.navigation.navigate('History')}
+          color='#88AA77'
+          icon='history'
+        />
         <Button
           title="Logout"
           onPress={this.logoutPressed} />
@@ -30,8 +53,8 @@ export default class HomeScreen extends React.Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  }
+    backgroundColor: '#ecf0f1',
+  },
 });
