@@ -66,17 +66,13 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
     color: '#34495e',
   },
-  cardButton: {
-    borderWidth: 1,
-    borderRadius: 3,
-    borderColor: '#34495e',
-    backgroundColor: 'transparent'
+  button: {
+    borderWidth:1,
+    borderRadius:3,
+    borderColor:'#34495e',
+    backgroundColor:'transparent'
   },
-  cardButtonContainer: {
-    marginLeft: 0
-  },
-  cardButtonTitle: {
-    fontWeight: 'bold',
-    color: '#34495e'
-  },
+  buttonText: {
+    color: "#34495e",
+  }
 });
