@@ -40,8 +40,8 @@ export default class SearchScreen extends React.Component<{}, State> {
           title="Cari Tutor"
           icon={{name: 'search', color: 'white'}}
           buttonStyle={{
-            borderRadius:3,
-            backgroundColor:'#34495e'
+            borderRadius: 3,
+            backgroundColor: '#34495e'
           }}
           containerStyle={{
             alignSelf: 'stretch',
@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
   },
   pickerText: {
     padding: 10,
-    fontSize: 14,
     color: "#34495e",
   }
 });
