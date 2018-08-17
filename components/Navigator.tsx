@@ -18,12 +18,12 @@ const styles = StyleSheet.create({
 const AppStack = createStackNavigator({
   Home: HomeScreen,
   History: HistoryScreen,
+  Search: SearchScreen,
 });
 
 const AuthStack = createStackNavigator({
   Login: LoginScreen,
   Register: RegisterScreen,
-  Search: SearchScreen,
 });
 
 export default createSwitchNavigator({
