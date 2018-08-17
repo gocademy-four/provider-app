@@ -3,8 +3,6 @@ import { Text, View, StyleSheet, Alert } from 'react-native';
 import { Button } from 'react-native-elements';
 import { Picker } from 'react-native-picker-dropdown';
 
-// picker to made: lesson, region
-
 export default class SearchScreen extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -79,5 +77,14 @@ const styles = StyleSheet.create({
   picker: {
     marginTop: 14,
     marginBottom: 14,
+    paddingTop: 5,
+    paddingBottom: 3,
+    borderRadius: 3,
+    backgroundColor: 'white',
   },
+  pickerText: {
+    padding: 10,
+    fontSize: 14,
+    color: "#34495e",
+  }
 });

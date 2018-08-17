@@ -1,26 +1,26 @@
 import * as React from 'react';
 import { StyleSheet, View, AsyncStorage, Button } from 'react-native';
 import { NavigationScreenProp } from 'react-navigation';
+import MainMenuCard from './MainMenuCard';
 
 interface Props {
   navigation: NavigationScreenProp<any>
 }
 
 export default class HomeScreen extends React.Component<Props> {
-  private logoutPressed = async () => {
-    await AsyncStorage.removeItem('token');
-    this.props.navigation.navigate('Initial');
-  }
-
-  static navigationOptions = {
-    headerTitle: 'Home',
-    headerRight: (
-      <Button
-        onPress={this.logoutPressed}
-        title="Logout"
-      />
-    ),
-  };
+  static navigationOptions =
+    ({ navigation }: { navigation: NavigationScreenProp<any> }) => ({
+      headerTitle: 'Home',
+      headerLeft: (
+        <Button
+          onPress={async () => {
+            await AsyncStorage.removeItem('token');
+            navigation.navigate('Initial');
+          }}
+          title="Logout"
+        />
+      ),
+    });
 
   render() {
     return (
