@@ -13,6 +13,10 @@ interface State {
 }
 
 export default class LoginScreen extends React.Component<Props, State> {
+  static navigationOptions = {
+    title: 'Login',
+  };
+
   private registerPressed = () => {
     this.props.navigation.navigate('Register')
   }
@@ -55,6 +59,7 @@ export default class LoginScreen extends React.Component<Props, State> {
           leftIcon={{name: 'lock'}}
           containerStyle={styles.input}
           placeholder="Password"
+          secureTextEntry={true}
           onChangeText={
             (password) => this.setState({...this.state, password})} />
         <Button title="Masuk" onPress={this.loginPressed} />

@@ -7,6 +7,7 @@ import HomeScreen from './HomeScreen';
 import HistoryScreen from './HistoryScreen';
 import SearchScreen from './SearchScreen';
 import SearchResultScreen from './SearchResultScreen';
+import HistoryDetailScreen from './HistoryDetailScreen';
 
 const styles = StyleSheet.create({
   container: {
@@ -19,6 +20,7 @@ const styles = StyleSheet.create({
 const AppStack = createStackNavigator({
   Home: HomeScreen,
   History: HistoryScreen,
+  HistoryDetail: HistoryDetailScreen,
   Search: SearchScreen,
   SearchResult: SearchResultScreen,
 });

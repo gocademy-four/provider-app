@@ -18,6 +18,10 @@ interface State {
 }
 
 export default class RegisterScreen extends React.Component<Props, State> {
+  static navigationOptions = {
+    title: 'Daftar',
+  };
+
   private registerPressed = async () => {
     const response = await fetch(
       "https://gocademy-tutor-api-server.herokuapp.com/customers", {
@@ -57,6 +61,7 @@ export default class RegisterScreen extends React.Component<Props, State> {
   render() {
     return (
       <View style={styles.container}>
+        <Text style={{marginBottom:14}}>Belajar apa saja, hanya dengan sentuhan jari</Text>
         <Input
           containerStyle={styles.input}
           leftIcon={{name: 'email'}}
@@ -76,6 +81,7 @@ export default class RegisterScreen extends React.Component<Props, State> {
         <Input
           containerStyle={styles.input}
           leftIcon={{name: 'phone'}}
+          secureTextEntry={true}
           placeholder="Type your phone number here"
           onChangeText={
             (phoneNumber) => this.setState({...this.state, phoneNumber})} />
