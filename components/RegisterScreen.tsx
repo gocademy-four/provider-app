@@ -1,5 +1,5 @@
 import * as React from "react"
-import { StyleSheet, Text, View, AsyncStorage } from "react-native"
+import { StyleSheet, Text, ScrollView, AsyncStorage } from "react-native"
 import { Input, Button } from "react-native-elements"
 import { NavigationScreenProp } from "react-navigation"
 
@@ -15,6 +15,8 @@ interface State {
   gender: string
   street: string
   city: string
+  lesson: string
+  price: string
 }
 
 export default class RegisterScreen extends React.Component<Props, State> {
@@ -39,7 +41,9 @@ export default class RegisterScreen extends React.Component<Props, State> {
             phone_number: this.state.phoneNumber,
             gender: this.state.gender,
             street: this.state.street,
-            city: this.state.city
+            city: this.state.city,
+            lesson: this.state.lesson,
+            price: this.state.price
           }
         })
       }
@@ -61,7 +65,7 @@ export default class RegisterScreen extends React.Component<Props, State> {
 
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.container}>
         <Text style={{ marginBottom: 14 }}>
           Berbagi ilmu, hanya dengan sentuhan jari
         </Text>
@@ -110,23 +114,36 @@ export default class RegisterScreen extends React.Component<Props, State> {
           placeholder="Kota"
           onChangeText={city => this.setState({ ...this.state, city })}
         />
+        <Input
+          containerStyle={styles.input}
+          leftIcon={{ name: "book" }}
+          placeholder="Pelajaran"
+          onChangeText={lesson => this.setState({ ...this.state, lesson })}
+        />
+        <Input
+          containerStyle={styles.input}
+          leftIcon={{ name: "money" }}
+          placeholder="Harga per Jam"
+          onChangeText={price => this.setState({ ...this.state, price })}
+        />
         <Button title="Daftar" onPress={this.registerPressed} />
 
         <Text style={{ marginTop: 20 }}>Sudah punya akun?</Text>
         <Text style={{ color: "blue" }} onPress={this.loginPressed}>
           Masuk sekarang
         </Text>
-      </View>
+      </ScrollView>
     )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "space-between",
+    paddingVertical: 20,
   },
   input: {
     marginBottom: 12

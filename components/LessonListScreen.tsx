@@ -6,7 +6,7 @@ import {
   Platform,
   ActivityIndicator
 } from "react-native"
-import { Button } from "react-native-elements"
+import { Button, ListView } from "react-native-elements"
 import { NavigationScreenProp } from "react-navigation"
 // @ts-ignore
 import { Picker } from "react-native-picker-dropdown"
@@ -16,7 +16,6 @@ interface Props {
 }
 
 interface State {
-  lesson: string
   lessonData: any[] | null
 }
 
@@ -25,13 +24,12 @@ export default class SearchScreen extends React.Component<Props, State> {
     super(props, context)
 
     this.state = {
-      lesson: "js",
       lessonData: null
     }
   }
 
   static navigationOptions = {
-    title: "Search"
+    title: "Pelajaran"
   }
 
   private populateLessons = async () => {
@@ -59,29 +57,14 @@ export default class SearchScreen extends React.Component<Props, State> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Mulai pencarian!</Text>
+        <Text style={styles.title}>Daftar pelajaran</Text>
         <Text style={styles.subtitle}>
-          Isi kolom berikut ini sesuai dengan kebutuhanmu.
+          Berikut ini adalah daftar materi yang kamu bersedia ajarkan. Klik nama pelajaran untuk mengubah rincian dan harga.
         </Text>
-        {this.state.lessonData ? (
-          <Picker
-            style={styles.picker}
-            selectedValue={this.state.lesson}
-            onValueChange={(lesson: string) => this.setState({ lesson })}
-            mode="dialog"
-            textStyle={styles.pickerText}
-          >
-            {this.state.lessonData.map((item, i) => (
-              <Picker.Item label={item} value={i} />
-            ))}
-          </Picker>
-        ) : (
-          <ActivityIndicator />
-        )}
         <Button
-          onPress={() => this.props.navigation.navigate("SearchResult")}
-          title="Cari Tutor"
-          icon={{ name: "search", color: "white" }}
+          onPress={() => this.props.navigation.navigate("EditLesson")}
+          title="Tambah Pelajaran"
+          icon={{ name: "add", color: "white" }}
           buttonStyle={{
             borderRadius: 3,
             backgroundColor: "#34495e"
@@ -92,7 +75,7 @@ export default class SearchScreen extends React.Component<Props, State> {
           }}
         />
       </View>
-    )
+    );
   }
 }
 
@@ -127,5 +110,5 @@ const styles = StyleSheet.create({
     padding: 10,
     color: "#34495e",
     ...(Platform.OS === "ios" ? { fontSize: 14 } : {})
-  }
+  },
 })
