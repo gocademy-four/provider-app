@@ -81,6 +81,7 @@ export default class RegisterScreen extends React.Component<Props, State> {
         <Input
           containerStyle={styles.input}
           leftIcon={{name: 'phone'}}
+          secureTextEntry={true}
           placeholder="Type your phone number here"
           onChangeText={
             (phoneNumber) => this.setState({...this.state, phoneNumber})} />

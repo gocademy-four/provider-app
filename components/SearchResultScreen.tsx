@@ -32,6 +32,7 @@ export default class SearchResultScreen extends React.Component {
             subtitle={"Lokasi: "+ item.location + "\nHarga: " + item.price + "/jam"}
             leftIcon={{ name: 'school' }}
             chevron
+            bottomDivider={true}
             onPress={() => Alert.alert(
               "Pilih tutor ini?",
               "Tekan 'Tidak' untuk membatalkan pesanan",

@@ -23,23 +23,31 @@ export default class HistoryScreen extends React.Component {
   };
   render() {
     return (
-<View style={styles.container}>
-  {
-    list.map((item, i) => (
-      <ListItem
-        containerStyle={styles.list}
-        key={i}
-        title={item.name}
-        titleStyle={styles.title}
-        subtitle={"Pelajaran: " + item.lesson + "\n" + item.location + ", " + item.date}
-        leftIcon={{ name: 'school' }}
-        chevron
-      />
-    ))
-  }
-</View>
+      <View style={styles.container}>
+        {
+          list.map((item, i) => (
+            <ListItem
+              key={i}
+              title={item.name}
+              titleStyle={styles.title}
+              subtitle={"Pelajaran: " + item.lesson + "\n" + item.location + ", " + item.date}
+              leftIcon={{ name: 'school' }}
+              chevron
+              bottomDivider={true}
+              onPress={() => {
+                this.props.navigation.navigate('HistoryDetail', {
+                  name: item.name,
+                  location: item.location,
+                  date: item.date,
+                  lesson: item.lesson,
+                });
+              }}
+            />
+          ))
+        }
+      </View>
     );
-  }
+  };
 }
 
 const styles = StyleSheet.create({
@@ -48,9 +56,5 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: 'bold',
-  },
-  list: {
-    borderColor: '#34495e',
-    borderBottomWidth: 1,
   }
 });

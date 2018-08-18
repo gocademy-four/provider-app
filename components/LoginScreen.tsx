@@ -59,6 +59,7 @@ export default class LoginScreen extends React.Component<Props, State> {
           leftIcon={{name: 'lock'}}
           containerStyle={styles.input}
           placeholder="Password"
+          secureTextEntry={true}
           onChangeText={
             (password) => this.setState({...this.state, password})} />
         <Button large title="Masuk" onPress={this.loginPressed} />
