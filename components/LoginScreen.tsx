@@ -19,6 +19,8 @@ export default class LoginScreen extends React.Component<Props, State> {
     super(props, context)
 
     this.state = {
+      email: "",
+      password: "",
       loginInProcess: false,
       unableLogin: false,
     }

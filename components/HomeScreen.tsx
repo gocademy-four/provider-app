@@ -49,10 +49,7 @@ export default class HomeScreen extends React.Component<Props> {
           name="Daftar Pelajaran"
           subtitle="Daftarkan pelajaran apa yang bisa dibagikan."
           button="Lihat daftar pelajaran"
-          onPress={() => this.props.navigation.navigate("LessonList", {
-            lesson: 'kimia',
-            price: '100k'
-          })}
+          onPress={() => this.props.navigation.navigate("EditLesson")}
           color="white"
           icon="book"
         />

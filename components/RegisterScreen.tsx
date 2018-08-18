@@ -68,6 +68,13 @@ export default class RegisterScreen extends React.Component<Props, State> {
       const { token } = JSON.parse(await response.text())
 
       await AsyncStorage.setItem("token", token)
+
+      if (response2.status === 200) {
+        console.log("Lesson created")
+      } else {
+        console.warn("Lesson not created")
+      }
+
       this.props.navigation.navigate("Initial")
     } else {
       console.warn("Unable to register")
@@ -137,7 +144,7 @@ export default class RegisterScreen extends React.Component<Props, State> {
         />
         <Input
           containerStyle={styles.input}
-          leftIcon={{ name: "money" }}
+          leftIcon={{ name: "local-offer" }}
           placeholder="Harga per Jam"
           onChangeText={price => this.setState({ ...this.state, price })}
         />

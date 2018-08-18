@@ -65,36 +65,6 @@ export default class EditLessonScreen extends React.Component<Props> {
             marginTop: 12
           }}
         />
-        <Button
-          onPress={() =>
-            Alert.alert(
-              "Hapus pelajaran?",
-              "Tekan 'Tidak' untuk membatalkan perubahan",
-              [
-                {
-                  text: "Tidak",
-                  onPress: () => console.log("No Pressed"),
-                  style: "cancel"
-                },
-                {
-                  text: "Ya",
-                  onPress: () => this.props.navigation.navigate("EditLesson")
-                }
-              ],
-              { cancelable: false }
-            )
-          }
-          title="Hapus Pelajaran"
-          icon={{ name: "delete", color: "white" }}
-          buttonStyle={{
-            borderRadius: 3,
-            backgroundColor: "red"
-          }}
-          containerStyle={{
-            alignSelf: "stretch",
-            marginTop: 12
-          }}
-        />
       </View>
     );
   }

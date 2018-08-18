@@ -5,7 +5,6 @@ import RegisterScreen from "./RegisterScreen"
 import InitialScreen from "./InitialScreen"
 import HomeScreen from "./HomeScreen"
 import HistoryScreen from "./HistoryScreen"
-import LessonListScreen from "./LessonListScreen"
 import EditLessonScreen from "./EditLessonScreen"
 import HistoryDetailScreen from "./HistoryDetailScreen"
 
@@ -21,7 +20,6 @@ const AppStack = createStackNavigator({
   Home: HomeScreen,
   History: HistoryScreen,
   HistoryDetail: HistoryDetailScreen,
-  LessonList: LessonListScreen,
   EditLesson: EditLessonScreen
 })
 
