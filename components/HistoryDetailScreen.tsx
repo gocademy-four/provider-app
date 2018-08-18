@@ -42,7 +42,7 @@ export default class HistoryDetailScreen extends React.Component<Props> {
 
     return (
       <View style={{paddingHorizontal:10}}>
-        <ScrollView createContainerStyle={styles.container}>
+        <ScrollView contentContainerStyle={styles.container}>
           <Text style={styles.header}>Rincian Pesanan</Text>
           {list.map((item, i) => (
             <ListItem

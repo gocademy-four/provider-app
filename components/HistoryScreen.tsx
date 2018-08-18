@@ -51,7 +51,7 @@ export default class HistoryScreen extends React.Component<Props, State> {
     return (
       <View style={styles.container}>
         {this.state.historyData ? (
-          {this.state.historyData.map((item, i) => (
+          this.state.historyData.map((item, i) => (
             <ListItem
               key={i}
               title={item.customer_name}
@@ -79,11 +79,10 @@ export default class HistoryScreen extends React.Component<Props, State> {
                  })
               }}
             />
-          ))}
+          ))
         ) : (
           <ActivityIndicator />
         )}}
-
       </View>
     )
   }

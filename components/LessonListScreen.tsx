@@ -6,7 +6,7 @@ import {
   Platform,
   ActivityIndicator
 } from "react-native"
-import { Button, ListView } from "react-native-elements"
+import { Button } from "react-native-elements"
 import { NavigationScreenProp } from "react-navigation"
 // @ts-ignore
 import { Picker } from "react-native-picker-dropdown"
