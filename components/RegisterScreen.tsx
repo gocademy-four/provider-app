@@ -97,7 +97,7 @@ export default class RegisterScreen extends React.Component<Props, State> {
         placeholder="Type your city here"
         onChangeText={
           (city) => this.setState({...this.state, city})} />
-        <Button large title="Daftar" onPress={this.RegisterPressed} />
+        <Button title="Daftar" onPress={this.registerPressed} />
 
         <Text style={{marginTop:20}}>Sudah punya akun?</Text>
         <Text style={{color: 'blue'}}
