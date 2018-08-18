@@ -1,15 +1,20 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Alert, Platform } from 'react-native';
 import { Button } from 'react-native-elements';
+import { NavigationScreenProp } from 'react-navigation';
 // @ts-ignore
 import { Picker } from 'react-native-picker-dropdown';
+
+interface Props {
+  navigation: NavigationScreenProp<any>
+}
 
 interface State {
   language: string
 }
 
-export default class SearchScreen extends React.Component<{}, State> {
-  constructor(props: {}, context?: any) {
+export default class SearchScreen extends React.Component<Props, State> {
+  constructor(props: Props, context?: any) {
     super(props, context);
     this.state = { language: 'js' };
   }

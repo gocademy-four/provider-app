@@ -62,7 +62,7 @@ export default class LoginScreen extends React.Component<Props, State> {
           secureTextEntry={true}
           onChangeText={
             (password) => this.setState({...this.state, password})} />
-        <Button large title="Masuk" onPress={this.loginPressed} />
+        <Button title="Masuk" onPress={this.loginPressed} />
 
         <Text style={{marginTop:20}}>Belum punya akun?</Text>
         <Text style={{color: 'blue'}}
