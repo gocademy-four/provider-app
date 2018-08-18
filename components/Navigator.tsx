@@ -5,8 +5,8 @@ import RegisterScreen from "./RegisterScreen"
 import InitialScreen from "./InitialScreen"
 import HomeScreen from "./HomeScreen"
 import HistoryScreen from "./HistoryScreen"
-import SearchScreen from "./SearchScreen"
-import SearchResultScreen from "./SearchResultScreen"
+import LessonListScreen from "./LessonListScreen"
+import EditLessonScreen from "./EditLessonScreen"
 import HistoryDetailScreen from "./HistoryDetailScreen"
 
 const styles = StyleSheet.create({
@@ -21,8 +21,8 @@ const AppStack = createStackNavigator({
   Home: HomeScreen,
   History: HistoryScreen,
   HistoryDetail: HistoryDetailScreen,
-  Search: SearchScreen,
-  SearchResult: SearchResultScreen
+  LessonList: LessonListScreen,
+  EditLesson: EditLessonScreen
 })
 
 const AuthStack = createStackNavigator({

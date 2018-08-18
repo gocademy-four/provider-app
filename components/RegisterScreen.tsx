@@ -24,7 +24,7 @@ export default class RegisterScreen extends React.Component<Props, State> {
 
   private registerPressed = async () => {
     const response = await fetch(
-      "https://gocademy-tutor-api-server.herokuapp.com/customers",
+      "https://gocademy-tutor-api-server.herokuapp.com/tutors",
       {
         method: "POST",
         headers: {
@@ -63,7 +63,7 @@ export default class RegisterScreen extends React.Component<Props, State> {
     return (
       <View style={styles.container}>
         <Text style={{ marginBottom: 14 }}>
-          Belajar apa saja, hanya dengan sentuhan jari
+          Berbagi ilmu, hanya dengan sentuhan jari
         </Text>
         <Input
           containerStyle={styles.input}
@@ -81,12 +81,12 @@ export default class RegisterScreen extends React.Component<Props, State> {
           containerStyle={styles.input}
           leftIcon={{ name: "lock" }}
           placeholder="Password"
+          secureTextEntry={true}
           onChangeText={password => this.setState({ ...this.state, password })}
         />
         <Input
           containerStyle={styles.input}
           leftIcon={{ name: "phone" }}
-          secureTextEntry={true}
           placeholder="Nomor telepon"
           onChangeText={phoneNumber =>
             this.setState({ ...this.state, phoneNumber })

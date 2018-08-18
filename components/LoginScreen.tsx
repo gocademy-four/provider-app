@@ -50,7 +50,7 @@ export default class LoginScreen extends React.Component<Props, State> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>GO - TUTOR</Text>
+        <Text style={styles.title}>GO-TUTOR PROVIDER</Text>
         <Input
           leftIcon={{ name: "email" }}
           containerStyle={styles.input}

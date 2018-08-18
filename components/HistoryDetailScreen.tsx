@@ -103,8 +103,4 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16
   },
-  subtitle: {
-    color: "#007aff",
-    fontSize: 18
-  }
 })
