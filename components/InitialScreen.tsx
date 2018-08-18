@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { StyleSheet, View, ActivityIndicator, AsyncStorage } from 'react-native';
-import { NavigationScreenProp } from 'react-navigation';
+import * as React from "react"
+import { StyleSheet, View, ActivityIndicator, AsyncStorage } from "react-native"
+import { NavigationScreenProp } from "react-navigation"
 
 interface Props {
   navigation: NavigationScreenProp<any>
@@ -8,7 +8,7 @@ interface Props {
 
 export default class InitialScreen extends React.Component<Props> {
   componentDidMount() {
-    this.bootstrap();
+    this.bootstrap()
   }
 
   render() {
@@ -16,16 +16,16 @@ export default class InitialScreen extends React.Component<Props> {
       <View style={styles.container}>
         <ActivityIndicator />
       </View>
-    );
+    )
   }
 
   private async bootstrap() {
-    const token = await AsyncStorage.getItem('token');
+    const token = await AsyncStorage.getItem("token")
 
     if (token) {
-      this.props.navigation.navigate('Home', { token });
+      this.props.navigation.navigate("Home", { token })
     } else {
-      this.props.navigation.navigate('Login');
+      this.props.navigation.navigate("Login")
     }
   }
 }
@@ -33,8 +33,8 @@ export default class InitialScreen extends React.Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center"
   }
-});
+})

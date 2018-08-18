@@ -1,5 +1,11 @@
 import * as React from "react"
-import { Text, View, StyleSheet, Alert, Platform, ActivityIndicator } from "react-native"
+import {
+  Text,
+  View,
+  StyleSheet,
+  Platform,
+  ActivityIndicator
+} from "react-native"
 import { Button } from "react-native-elements"
 import { NavigationScreenProp } from "react-navigation"
 // @ts-ignore

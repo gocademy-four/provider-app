@@ -1,3 +1,3 @@
-import Navigator from './components/Navigator';
+import Navigator from "./components/Navigator"
 
-export default Navigator;
+export default Navigator
