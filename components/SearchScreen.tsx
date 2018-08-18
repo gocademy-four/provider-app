@@ -2,8 +2,8 @@ import * as React from 'react';
 import { Text, View, StyleSheet, Alert, Platform } from 'react-native';
 import { Button } from 'react-native-elements';
 import { NavigationScreenProp } from 'react-navigation';
+// @ts-ignore
 import { Picker } from 'react-native-picker-dropdown';
-import { DatePicker } from 'react-native-datepicker';
 
 interface Props {
   navigation: NavigationScreenProp<any>
@@ -11,16 +11,16 @@ interface Props {
 
 interface State {
   lesson: string
-  lessonData: any[]
+  lessonData: any[] | null
 }
 
 export default class SearchScreen extends React.Component<Props, State> {
   constructor(props: Props, context?: any) {
     super(props, context);
+
     this.state = {
       lesson: 'js',
       lessonData: null,
-      //datetime: '2018-08-19 18:00',
     };
   }
 
@@ -29,11 +29,10 @@ export default class SearchScreen extends React.Component<Props, State> {
   };
 
   private loginPressed = async () => {
-  const response = await fetch(
-    "https://gocademy-tutor-api-server.herokuapp.com/classes")
-    .then((response) => response.json())
-    .then((responseData) => { this.setState({ lessonData }) })
-    .done();
+    const response = await fetch(
+      "https://gocademy-tutor-api-server.herokuapp.com/classes");
+
+    this.setState({ lessonData: await response.json() })
   }
 
   render() {
@@ -49,7 +48,10 @@ export default class SearchScreen extends React.Component<Props, State> {
           textStyle={styles.pickerText}
         >
         {
-          lessonData.map((item, i) => (<Picker.Item label={item} value={i} />))
+          this.state.lessonData
+            ? this.state.lessonData.map(
+                (item, i) => <Picker.Item label={item} value={i} />)
+            : []
         }
         </Picker>
 

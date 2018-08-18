@@ -1,8 +1,13 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Alert } from 'react-native';
 import { ListItem, Button } from 'react-native-elements';
+import { NavigationScreenProp } from 'react-navigation';
 
-export default class HistoryDetailScreen extends React.Component {
+interface Props {
+  navigation: NavigationScreenProp<any>
+}
+
+export default class HistoryDetailScreen extends React.Component<Props> {
   static navigationOptions = {
     title: 'Rincian',
   };

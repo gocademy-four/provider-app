@@ -1,6 +1,11 @@
 import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { ListItem } from 'react-native-elements';
+import { NavigationScreenProp } from 'react-navigation';
+
+interface Props {
+  navigation: NavigationScreenProp<any>
+}
 
 const list = [
   {
@@ -18,7 +23,7 @@ const list = [
   },
 ]
 
-export default class HistoryScreen extends React.Component {
+export default class HistoryScreen extends React.Component<Props> {
   static navigationOptions = {
     title: 'History',
   };
