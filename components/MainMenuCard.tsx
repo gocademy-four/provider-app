@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Alert, Text, View, StyleSheet } from 'react-native';
+import { Alert, Text, View, StyleSheet, Platform } from 'react-native';
 import { Button } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation';
 
@@ -67,10 +67,10 @@ const styles = StyleSheet.create({
     color: '#34495e',
   },
   button: {
-    borderWidth:1,
     borderRadius:3,
     borderColor:'#34495e',
-    backgroundColor:'transparent'
+    backgroundColor:'transparent',
+    ...(Platform.OS === 'ios' ? { borderWidth: 1 } : {})
   },
   buttonText: {
     color: "#34495e",

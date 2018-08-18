@@ -18,12 +18,20 @@ export default class HistoryDetailScreen extends React.Component {
         subtitle: this.props.navigation.getParam('lesson', 'No lesson'),
       },
       {
+        title: 'Waktu',
+        subtitle: this.props.navigation.getParam('date', 'No date'),
+      },
+      {
         title: 'Lokasi',
         subtitle: this.props.navigation.getParam('location', 'Unlocated'),
       },
       {
         title: 'Harga/jam',
-        subtitle: this.props.navigation.getParam('price', 'Free'),
+        subtitle: this.props.navigation.getParam('price', 'Unknown'),
+      },
+      {
+        title: 'Telepon',
+        subtitle: this.props.navigation.getParam('telephone', 'No number'),
       }
     ]
 
@@ -39,7 +47,6 @@ export default class HistoryDetailScreen extends React.Component {
             subtitle={item.subtitle}
             subtitleStyle={styles.subtitle}
             bottomDivider={true}
-            onPress={() => this.props.navigation.navigate('Home')}
           />
         ))
       }
@@ -78,7 +85,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'justify',
-    padding: 14,
+    paddingBottom: 14,
     color: '#34495e',
   },
   title: {

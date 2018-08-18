@@ -8,6 +8,7 @@ const list = [
     location: 'Tangerang',
     lesson: 'Kimia',
     date: "27 Januari 2008",
+    telephone: "08569952260",
   },
   {
     name: 'Trips',
@@ -30,7 +31,7 @@ export default class HistoryScreen extends React.Component {
               key={i}
               title={item.name}
               titleStyle={styles.title}
-              subtitle={"Pelajaran: " + item.lesson + "\n" + item.location + ", " + item.date}
+              subtitle={"Pelajaran: " + item.lesson + "\n" + item.location + ", " + item.date + "\n" + item.telephone}
               leftIcon={{ name: 'school' }}
               chevron
               bottomDivider={true}
@@ -40,6 +41,7 @@ export default class HistoryScreen extends React.Component {
                   location: item.location,
                   date: item.date,
                   lesson: item.lesson,
+                  telephone: item.telephone,
                 });
               }}
             />

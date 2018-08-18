@@ -65,42 +65,42 @@ export default class RegisterScreen extends React.Component<Props, State> {
         <Input
           containerStyle={styles.input}
           leftIcon={{name: 'email'}}
-          placeholder="Type your e-mail here"
+          placeholder="E-mail"
           onChangeText={(email) => this.setState({...this.state, email})} />
         <Input
           containerStyle={styles.input}
           leftIcon={{name: 'person'}}
-          placeholder="Type your name here"
+          placeholder="Nama"
           onChangeText={(name) => this.setState({...this.state, name})} />
         <Input
           containerStyle={styles.input}
           leftIcon={{name: 'lock'}}
-          placeholder="Type your password here"
+          placeholder="Password"
           onChangeText={
             (password) => this.setState({...this.state, password})} />
         <Input
           containerStyle={styles.input}
           leftIcon={{name: 'phone'}}
           secureTextEntry={true}
-          placeholder="Type your phone number here"
+          placeholder="Nomor telepon"
           onChangeText={
             (phoneNumber) => this.setState({...this.state, phoneNumber})} />
         <Input
           containerStyle={styles.input}
           leftIcon={{name: 'wc'}}
-          placeholder="Type your gender here"
+          placeholder="Jenis Kelamin"
           onChangeText={
             (gender) => this.setState({...this.state, gender})} />
         <Input
           containerStyle={styles.input}
           leftIcon={{name: 'home'}}
-          placeholder="Type your street here"
+          placeholder="Alamat"
           onChangeText={
             (street) => this.setState({...this.state, street})} />
         <Input
         containerStyle={styles.input}
           leftIcon={{name: 'domain'}}
-        placeholder="Type your city here"
+        placeholder="Kota"
         onChangeText={
           (city) => this.setState({...this.state, city})} />
         <Button title="Daftar" onPress={this.registerPressed} />
