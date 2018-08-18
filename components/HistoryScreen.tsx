@@ -26,7 +26,7 @@ export default class HistoryScreen extends React.Component<Props, State> {
 
   private populateHistories = async () => {
     const response = await fetch(
-      "https://gocademy-tutor-api-server.herokuapp.com/orders",
+      "https://gocademy-tutor-api-server.herokuapp.com/history",
       {
         method: "GET",
         headers: {
