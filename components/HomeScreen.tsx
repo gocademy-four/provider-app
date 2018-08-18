@@ -47,14 +47,14 @@ export default class HomeScreen extends React.Component<Props> {
       <View style={styles.container}>
         <MainMenuCard
           name="Daftar Pelajaran"
-          subtitle="Daftarkan pelajaran apa saja yang bisa dibagikan."
+          subtitle="Daftarkan pelajaran apa yang bisa dibagikan."
           button="Lihat daftar pelajaran"
-          onPress={() => this.props.navigation.navigate("EditLesson", {
+          onPress={() => this.props.navigation.navigate("LessonList", {
             lesson: 'kimia',
             price: '100k'
           })}
           color="white"
-          icon="edit"
+          icon="book"
         />
         <MainMenuCard
           name="Log Pesanan"
