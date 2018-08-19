@@ -57,7 +57,9 @@ export default class HomeScreen extends React.Component<Props> {
           name="Log Pesanan"
           subtitle="Masih lupa besok belajar dengan siapa? Yuk, lihat catatannya!"
           button="Buka log pesanan"
-          onPress={() => this.props.navigation.navigate("History")}
+          onPress={() => this.props.navigation.navigate("History", {
+            token: this.props.navigation.getParam("token")
+          })}
           color="#ecf0f1"
           icon="history"
         />

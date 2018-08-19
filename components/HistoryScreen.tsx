@@ -30,7 +30,8 @@ export default class HistoryScreen extends React.Component<Props, State> {
       {
         method: "GET",
         headers: {
-          Accept: "application/json"
+          Accept: "application/json",
+          Authorization: `Bearer ${this.props.navigation.getParam("token")}`
         }
       }
     )
@@ -38,7 +39,7 @@ export default class HistoryScreen extends React.Component<Props, State> {
     if (response.status === 200) {
       this.setState({ historyData: await response.json() })
     } else {
-      console.warn("Unable to fetch classes")
+      console.warn(response.status)
     }
   }
 
@@ -81,8 +82,7 @@ export default class HistoryScreen extends React.Component<Props, State> {
           ))
         ) : (
           <ActivityIndicator />
-        )}}
-
+        )}
       </View>
     )
   }
